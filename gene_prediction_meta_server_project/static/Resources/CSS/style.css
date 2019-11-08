@@ -1,0 +1,356 @@
+/* Theme Color: #21b2a6 */
+/*1cd1c2
+1cbcaf*/
+/************************** DEFAULTS-BASIC SETUP *************************/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html,body{
+    background-color: #fff;
+    color: #555;
+    font-family: 'Lato','Arial',sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+.row{
+    max-width: 1140px;
+    margin: 0 auto 0 auto;
+}
+
+section{
+    padding: 80px;
+}
+
+
+
+.clearfix{zoom: 1}
+.clearfix:after{
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+/****************************** TEXT HEADINGS ****************************************/
+h2{
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+h2:after{
+    display: block;
+    height: 2px;
+    background-color: #21b2a6;
+    content: " ";
+    width: 100px;
+    margin:0 auto;
+    margin-top: 30px;
+}
+p{
+    text-align: center;
+}
+h3{
+    padding: 20px;
+    color: white;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+/****************************** HEADER ****************************************/
+
+/********************************* NAV-BAR ****************************************/
+
+
+.logo{
+    position: absolute;
+    left: 35px;
+    float: left;  
+    padding-top: 5px;
+    padding-left: 0;
+    width: 17%;
+}
+
+.whitelogo{
+    display: none;
+    float: left;
+    height: 50px;
+    margin-top: 5px;
+    margin-left: -50px;
+}
+
+/*------------MAIN NAV BAR----------------*/
+
+nav .row{
+    height: 60px;
+}
+.main-nav{
+    float:right;
+    list-style: none;  
+    padding-top: 15px;
+}
+
+.main-nav li{
+    display: inline;
+    margin-left: 40px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited{
+    padding: 8px 0;
+    color: #fff;
+    text-decoration: none;
+    font-size: 90%;
+    transition: border-bottom 0.2s;
+    border-bottom: 2px solid transparent;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active{
+    border-bottom: 2px solid #21b2a6;
+}
+
+/*------------STICKY NAV BAR----------------*/
+
+.sticky{
+    background-color: rgba(33, 178, 166, 0.9);
+    position: fixed;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 2px 2px 2px #e0dbdb;
+    font-weight: 400;
+    z-index: 9999;
+}
+
+.sticky .main-nav{
+    padding-top: 0;
+    
+}
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited{
+    padding: 16px 0;
+    color: #fff;
+}
+ 
+.sticky .main-nav li a:hover,
+.sticky .main-nav li a:active{
+    border-bottom: 2px solid #fff;
+}
+
+.main-nav{
+    margin-top: 18px;    
+}
+
+.sticky .logo{ display: none;}
+.sticky .whitelogo{ display: block;}
+
+
+
+/*------------------------------------------------BUTTONS---------------------------------------------------*/
+.btn:link,
+.btn:visited,
+input[type=submit]{
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    -webkit-transition: background-color 0.3s, border 0.3s,color 0.3s;
+    transition: background-color 0.3s, border 0.3s,color 0.3s;
+    
+}
+
+
+.btn-full:link,
+.btn-full:visited,
+input[type=submit]{
+    background-color: #21b2a6;
+    border: 2px solid #21b2a6;
+    color: #fff;
+    margin-right: 15px;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited{
+    border: 2px solid #21b2a6;
+    color: #21b2a6
+}
+
+.btn:hover,
+.btn:active,
+input[type=submit]:hover,
+input[type=submit]:active{
+    background-color: rgba(33, 178, 166, 0.71);
+}
+ 
+.btn-full:hover,
+.btn-full:active
+{
+    border: 2px solid rgba(33, 178, 166, 0.71);
+}
+
+.btn-ghost:hover,
+.btn-ghost:active{
+    border: 2px solid rgba(33, 178, 166, 0.71);
+    color: #fff
+}
+
+
+
+
+
+/******************************* SECTION TEAM *******************************************/
+.section-team{
+    align-content: center;
+}
+.section-team .col{
+    box-shadow: -4px 10px 10px #ddd8d8;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;    
+    
+    
+}
+.section-team .col:hover{
+    transform: scale(1.05);
+    transition: transform 0.5s,opacity 0.5s;
+
+
+}
+.section-team img{
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    
+}
+.section-team .unknown{
+    opacity: 0.40;
+}
+.section-team .unknown:hover{
+    opacity: 1;
+}
+
+.section-team p{
+    padding-bottom: 20px;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+.section-team h3{
+    background-color: #21b2a6;
+    font-size: 80%;
+    margin-top: -5px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+}
+
+
+/************************************* FOOTER SECTION **********************************************/
+
+
+.footer-nav{
+    list-style: none;
+    float:left;
+    
+}
+
+.social-links{
+    list-style: none;
+    float:right;
+}
+
+.footer-nav li,
+.social-links li{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer-nav li:last-child,
+.social-links li:last-child{
+    margin-right: 0;
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited{
+    text-decoration: none;
+    border: 0;
+    color:#fff;
+    -webkit-transition: color 0.3s;
+    transition: color 0.3s;
+}
+
+
+.footer-nav li a:hover,
+.footer-nav li a:active{
+    color: #ddd;
+}
+
+.social-links li a:link,
+.social-links li a:visited{
+    font-size: 180%;
+    
+}
+.ion-social-facebook:hover{
+    color: #3b5998;
+}
+.ion-social-twitter:hover{
+    color: #00aced;
+}
+.ion-social-googleplus:hover{
+    color: #dd4b39;
+}
+.ion-social-instagram:hover{
+    color: #517fa4;
+}
+footer p{
+    color: #fff;
+    margin-top: 20px;
+    text-align: center;
+
+}
+footer{
+    background-color: #21b2a6;
+    color: white;
+    padding: 40px;
+    font-size: 85%;
+    
+}
+
+
+/*-------------------FOR ANIMATIONS-------------------*/
+.js--wp-1{
+    opacity: 0;
+}
+
+.js--wp-1.animated{
+    opacity: 1;
+}
+.js--wp-2{
+    opacity: 0;
+}
+
+.js--wp-2.animated{
+    opacity: 1;
+}
+.js--wp-3{
+    opacity: 0;
+}
+
+.js--wp-3.animated{
+    opacity: 1;
+}
+
