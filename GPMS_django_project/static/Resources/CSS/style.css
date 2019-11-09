@@ -1,4 +1,4 @@
-/* Theme Color: #21b2a6 */
+/* Theme Color: darkviolet */
 /*1cd1c2
 1cbcaf*/
 /************************** DEFAULTS-BASIC SETUP *************************/
@@ -50,7 +50,7 @@ h2{
 h2:after{
     display: block;
     height: 2px;
-    background-color: #21b2a6;
+    background-color: darkviolet;
     content: " ";
     width: 100px;
     margin:0 auto;
@@ -67,6 +67,23 @@ h3{
 }
 
 /****************************** HEADER ****************************************/
+
+.main-header{
+    text-align: center;
+    margin-top: 100px;
+}
+.main-header .row{
+    align-content: center;
+}
+
+.upload-content {
+    position: relative;
+    height: 300px;
+    width: 70%;
+    border: 6px solid darkviolet;
+    margin-left:15%; 
+    border-radius: 30px;
+}
 
 /********************************* NAV-BAR ****************************************/
 
@@ -90,13 +107,17 @@ h3{
 
 /*------------MAIN NAV BAR----------------*/
 
+nav{
+    background-color: darkviolet;
+}
 nav .row{
     height: 60px;
+
 }
 .main-nav{
     float:right;
     list-style: none;  
-    padding-top: 15px;
+    padding-top: 7px;
 }
 
 .main-nav li{
@@ -116,7 +137,7 @@ nav .row{
 
 .main-nav li a:hover,
 .main-nav li a:active{
-    border-bottom: 2px solid #21b2a6;
+    border-bottom: 2px solid #fff;
 }
 
 /*------------STICKY NAV BAR----------------*/
@@ -155,6 +176,8 @@ nav .row{
 .sticky .logo{ display: none;}
 .sticky .whitelogo{ display: block;}
 
+/*------------------------------------------------FORM----------------------------------------------------*/
+
 
 
 /*------------------------------------------------BUTTONS---------------------------------------------------*/
@@ -171,33 +194,29 @@ input[type=submit]{
     
 }
 
-
-.btn-full:link,
-.btn-full:visited,
-input[type=submit]{
-    background-color: #21b2a6;
-    border: 2px solid #21b2a6;
-    color: #fff;
-    margin-right: 15px;
-}
-
-.btn-ghost:link,
-.btn-ghost:visited{
-    border: 2px solid #21b2a6;
-    color: #21b2a6
-}
-
 .btn:hover,
 .btn:active,
 input[type=submit]:hover,
 input[type=submit]:active{
-    background-color: rgba(33, 178, 166, 0.71);
+    background-color: darkviolet;
+    color: white;
 }
+
+
+.btn-full:link,
+.btn-full:visited,
+input[type=submit]{
+    background-color: rgba(255,255,255,0.5);
+    border: 2px solid darkviolet;
+    color: #black;
+    margin-right: 15px;
+}
+
  
 .btn-full:hover,
 .btn-full:active
 {
-    border: 2px solid rgba(33, 178, 166, 0.71);
+    border: 2px solid darkviolet;
 }
 
 .btn-ghost:hover,
@@ -207,6 +226,11 @@ input[type=submit]:active{
 }
 
 
+.btn-ghost:link,
+.btn-ghost:visited{
+    border: 2px solid darkviolet;
+    color: darkviolet
+}
 
 
 
@@ -248,7 +272,7 @@ input[type=submit]:active{
     font-weight: 400;
 }
 .section-team h3{
-    background-color: #21b2a6;
+    background-color: darkviolet;
     font-size: 80%;
     margin-top: -5px;
     border-bottom-left-radius: 15px;
@@ -323,7 +347,7 @@ footer p{
 
 }
 footer{
-    background-color: #21b2a6;
+    background-color: darkviolet;
     color: white;
     padding: 40px;
     font-size: 85%;
