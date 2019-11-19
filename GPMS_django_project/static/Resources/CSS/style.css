@@ -58,6 +58,7 @@ h2:after{
 }
 p{
     text-align: center;
+    font-size: 14px;
 }
 h3{
     padding: 20px;
@@ -70,20 +71,86 @@ h3{
 
 .main-header{
     text-align: center;
-    margin-top: 100px;
+    margin-top: 30px;
 }
 .main-header .row{
     align-content: center;
 }
-
+.upload-content .p{
+    font-size: 8px;
+}
 .upload-content {
     position: relative;
-    height: 300px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 100%;
     width: 70%;
     border: 6px solid darkviolet;
     margin-left:15%; 
     border-radius: 30px;
 }
+
+input[type=email]{
+    border-radius: 8px;
+    font-size: 18px;
+    font-family:cursive;
+    height: 30px;
+}
+
+
+select{
+    padding: 3px 4px;
+    border-radius: 15px;
+    min-width: 175px;
+}
+option{
+    font-size: 14px;
+}
+
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: darkviolet;
+    border-radius: 15px;
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 5px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: darkviolet;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: darkviolet;}
+
 
 /********************************* NAV-BAR ****************************************/
 
