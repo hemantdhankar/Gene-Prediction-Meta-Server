@@ -11,9 +11,9 @@ def home(request):
 		softwares_list=request.POST.getlist('softwares[]')        
 		if("1" in softwares_list or len(softwares_list)==0):
 			print("s1")
-			#os.path.abspath('..')
-			#os.chdir("static/upload/")
-			#os.system(" python3 geneidscript.py")
+			os.path.abspath('..')
+			os.chdir("static/upload/")
+			os.system(" python3 geneidscript.py")
 
 		if("2" in softwares_list):
 			print("s2")

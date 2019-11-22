@@ -28,7 +28,7 @@ def send_email(user_email):
 	######### isse ne nechhe ke code se koi matlab nahi hai ############
 
 	class MLStripper(HTMLParser):
-	    def _init_(self):
+	    def __init__(self):
 	        self.reset()
 	        self.convert_charrefs=True
 	        self.fed = []
@@ -60,7 +60,7 @@ def send_email(user_email):
 	    body.attach(MIMEText(htmlmsgtext, 'html'))
 	    msg.attach(body)
 	    #print('attachments' in globals())
-	    if len('attachments') > 0: # are there attachments?
+	    if len(attachments) > 0: # are there attachments?
 	        for filename in attachments:
 	            f = filename
 	            print(f)
