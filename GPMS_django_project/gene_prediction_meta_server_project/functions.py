@@ -1,22 +1,25 @@
+import glob
+import smtplib, os, sys
+from email.mime.multipart import MIMEMultipart
+from email.mime.base import MIMEBase
+from email.mime.text import MIMEText
+from email import encoders
+from html.parser import HTMLParser
 def send_email(user_email):
 	# lines to be changed 10, 11, 12, 15, 16
-	import glob
-	import smtplib, os, sys
-	from email.mime.multipart import MIMEMultipart
-	from email.mime.base import MIMEBase
-	from email.mime.text import MIMEText
-	from email import encoders
-	from html.parser import HTMLParser
+	
 	    
-	attachments = glob.glob("Path for output folder/*")
-	username = 'nakli username'
-	password = 'nakli password'
+	attachments = glob.glob("../output/*")
+	print(attachments)
+	username = 'genepredictionmetaserver'
+	password = 'Gene@server'
 	host = 'smtp.gmail.com:587' 
 
-	fromaddr = 'nakli ID' # less secure app allow karna padega
+	fromaddr = 'genepredictionmetaserver@gmail.com' # less secure app allow karna padega
 	toaddr  = user_email
 	replyto = fromaddr
-	msgsubject = "Gene Prediction Meta Server Email Testing"
+
+	msgsubject = "Yeh humara subject hoga"
 
 	htmlmsgtext = """<h2>This is my message body in HTML...WOW!!!!!</h2>
 	                <p>Simple html format use karenge plain text ki jagah BC</p>
@@ -25,9 +28,9 @@ def send_email(user_email):
 	######### isse ne nechhe ke code se koi matlab nahi hai ############
 
 	class MLStripper(HTMLParser):
-	    def __init__(self):
+	    def _init_(self):
 	        self.reset()
-	        self.convert_charrefs= True
+	        self.convert_charrefs=True
 	        self.fed = []
 	    def handle_data(self, d):
 	        self.fed.append(d)
@@ -56,13 +59,14 @@ def send_email(user_email):
 	    body.attach(MIMEText(msgtext))
 	    body.attach(MIMEText(htmlmsgtext, 'html'))
 	    msg.attach(body)
-
-	    if 'attachments' in globals() and len('attachments') > 0: # are there attachments?
+	    #print('attachments' in globals())
+	    if len('attachments') > 0: # are there attachments?
 	        for filename in attachments:
 	            f = filename
+	            print(f)
 	            part = MIMEBase('application', "octet-stream")
 	            part.set_payload( open(f,"rb").read() )
-	            Encoders.encode_base64(part)
+	            encoders.encode_base64(part)
 	            part.add_header('Content-Disposition', 'attachment; filename="%s"' % os.path.basename(f))
 	            msg.attach(part)
 
@@ -79,7 +83,7 @@ def send_email(user_email):
 	        server.starttls()
 	        server.login(username,password)
 	        server.sendmail(msg['From'], [msg['To']], msg.as_string())
-	        print ('Email sent')
+	        print('Email sent')
 	        server.quit() # bye bye
 	    except:
 	        # if tls is set for non-tls servers you would have raised an exception, so....
@@ -89,8 +93,7 @@ def send_email(user_email):
 	        server.quit() # sbye bye        
 	except:
 	    print ('Email NOT sent to %s successfully. %s ERR: %s %s %s ', str(toaddr), 'tete', str(sys.exc_info()[0]), str(sys.exc_info()[1]), str(sys.exc_info()[2]) )
-	    #just in case    
-
+	    #just in case
 
 def handle_uploaded_file(f):  
     with open('static/upload/'+f.name, 'wb+') as destination:  
