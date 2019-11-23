@@ -1,4 +1,4 @@
-/* Theme Color: darkviolet */
+/* Theme Color: #9b59b6 */
 /*1cd1c2
 1cbcaf*/
 /************************** DEFAULTS-BASIC SETUP *************************/
@@ -40,17 +40,24 @@ section{
     visibility: hidden;
 }
 
+hr{
+    background-color: black;
+    border: 5px solid rgba(195, 86, 191,0.7);
+}
 /****************************** TEXT HEADINGS ****************************************/
 h2{
     text-align: center;
     margin-bottom: 10px;
     font-weight: 500;
     letter-spacing: 2px;
+    padding-bottom: 30px;
+    padding-top: 0;
+    margin-top: 0;
 }
 h2:after{
     display: block;
     height: 2px;
-    background-color: darkviolet;
+    background-color: #9b59b6;
     content: " ";
     width: 100px;
     margin:0 auto;
@@ -70,38 +77,29 @@ h3{
 /****************************** HEADER ****************************************/
 
 header{
+    background-image: linear-gradient(to right,rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.3)), url(Img/coverimage4.jpg);    
     background-size: cover;
     background-position: center;
     height: 100vh;
     background-attachment: fixed;
 }
+
+
 .main-header-text{
     text-align: center;
-    color: #000;
+    color: #fff;
     position: relative;
-    top: 20%;
+    top: 25%;
 }
 .main-header .row{
     align-content: center;
 }
-.upload-content .p{
-    font-size: 8px;
-}
-.upload-content {
-    position: relative;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    height: 100%;
-    width: 70%;
-    border: 6px solid darkviolet;
-    margin-left:15%; 
-    border-radius: 30px;
-}
 
-input[type=email]{
+
+input[type=email],[type=text]{
     border-radius: 8px;
     font-size: 18px;
-    font-family:cursive;
+    
     height: 30px;
 }
 
@@ -118,7 +116,7 @@ option{
 
 /* Dropdown Button */
 .dropbtn {
-  background-color: darkviolet;
+  background-color: #9b59b6;
     border-radius: 15px;
   color: white;
   padding: 10px;
@@ -151,13 +149,13 @@ option{
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: darkviolet;}
+.dropdown-content a:hover {background-color: #9b59b6;}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {display: block;}
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: darkviolet;}
+.dropdown:hover .dropbtn {background-color: #9b59b6;}
 
 
 /********************************* NAV-BAR ****************************************/
@@ -165,11 +163,14 @@ option{
 
 .logo{
     position: absolute;
+    color: rgba(255, 255, 255, 0.68);
     left: 35px;
     float: left;  
-    padding-top: 5px;
-    padding-left: 0;
-    width: 17%;
+    font-size: 160%;
+    border-radius: -15px;
+    padding: 2px 10px;  
+    border: 6px solid rgba(255,255,255,0.68);
+
 }
 
 .whitelogo{
@@ -182,9 +183,7 @@ option{
 
 /*------------MAIN NAV BAR----------------*/
 
-nav{
-    background-color: darkviolet;
-}
+
 nav .row{
     height: 60px;
 
@@ -192,7 +191,8 @@ nav .row{
 .main-nav{
     float:right;
     list-style: none;  
-    padding-top: 7px;
+    padding-top: 30px;
+    font-size: 110%;
 }
 
 .main-nav li{
@@ -254,9 +254,38 @@ nav .row{
 /*------------------------------------------------SECTION-FORM----------------------------------------------------*/
 .section-form{
     text-align: center;
-    margin-top: 30px;
+    margin-top: 0;
+    padding-top: 70px;
+    background-image: linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),url(Img/form-cover.png);
+    background-size: cover;
 }
+.section-form h2{
+    color:white;
+}
+.section-form h2:after{
+    display: block;
+    height: 2px;
+    background-color: #fff;
+    content: " ";
+    width: 100px;
+    margin:0 auto;
+    margin-top: 30px;}
 
+
+.upload-content .p{
+    font-size: 8px;
+}
+.upload-content {
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 100%;
+    width: 70%;
+    margin-left:15%; 
+    border-radius: 40px;
+    background-color: rgba(255, 255, 255, 0.85);
+
+}
 
 /*------------------------------------------------BUTTONS---------------------------------------------------*/
 .btn:link,
@@ -272,45 +301,51 @@ input[type=submit]{
     
 }
 
-.btn:hover,
-.btn:active,
-input[type=submit]:hover,
-input[type=submit]:active{
-    background-color: darkviolet;
-    color: white;
-}
-
 
 .btn-full:link,
 .btn-full:visited,
 input[type=submit]{
-    background-color: rgba(255,255,255,0.5);
-    border: 2px solid darkviolet;
-    color: #black;
+    background-color: #9b59b6;
+    border: 2px solid #9b59b6;
+    color: #fff;
     margin-right: 15px;
 }
 
+.btn-ghost:link,
+.btn-ghost:visited{
+    border: 2px solid #9b59b6;
+    color: #fff;
+}
+
+.btn:hover,
+.btn:active,
+input[type=submit]:hover,
+input[type=submit]:active{
+    background-color: rgba(155, 89, 182, 0.6);
+}
  
 .btn-full:hover,
 .btn-full:active
 {
-    border: 2px solid darkviolet;
+    border: 2px solid rgba(155, 89, 182, 0.6);
 }
 
 .btn-ghost:hover,
 .btn-ghost:active{
-    border: 2px solid rgba(33, 178, 166, 0.71);
+    border: 2px solid rgba(155, 89, 182, 0.6);
     color: #fff
 }
 
-
-.btn-ghost:link,
-.btn-ghost:visited{
-    border: 2px solid darkviolet;
-    color: darkviolet
+.section-form .btn-ghost{
+    background-color: #fff;
+    color: black;
 }
+.section-form .btn-ghost:hover{
+    color: white;
+    background-color: #9b59b6;
+    transition: background-color 0.3s, border 0.3s,color 0.3s;
 
-
+}
 
 /******************************* SECTION TEAM *******************************************/
 .section-team{
@@ -350,7 +385,7 @@ input[type=submit]{
     font-weight: 400;
 }
 .section-team h3{
-    background-color: darkviolet;
+    background-color: #9b59b6;
     font-size: 80%;
     margin-top: -5px;
     border-bottom-left-radius: 15px;
@@ -425,7 +460,7 @@ footer p{
 
 }
 footer{
-    background-color: darkviolet;
+    background-color: #9b59b6;
     color: white;
     padding: 40px;
     font-size: 85%;
@@ -464,7 +499,10 @@ footer{
 }
 .dna {
 	width: 360px;
-	margin: 100px auto;
+	margin-top: 100px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
 	perspective: 270px;
 	transform-style: preserve-3d;
 	letter-spacing: -5px;
@@ -490,7 +528,7 @@ footer{
 }
 
 .ele:nth-of-type(2n) .dot:before {
-	background: blue;
+	background: rgb(179, 114, 206);
 }
 .dot {
 	width: inherit;
@@ -503,7 +541,7 @@ footer{
 	width: inherit;
 	height: inherit;
 	display: block;
-	background: #e74c3c	;
+	background: rgba(86, 212, 188, 0.96)	;
 	border-radius: 50%;
 	animation: rotate 3s linear infinite reverse;
 	transform: rotateX(-360deg) translateZ(0);

@@ -15,6 +15,7 @@
 		<header>
             <nav>
                 <div class="row">
+                    <h1 class="logo">GPMS</h1>
                     <ul class="main-nav">
                         <li><a href="#">About</a></li>
                         <li><a href="#">Team</a></li>
@@ -24,9 +25,8 @@
                 
             </nav>
         <div class="main-header-text">
-            <h1>Welcome to the Gene Prediction Meta Server</h1>
-            <br>
-            
+            <h1>The Gene Prediction Meta Server</h1>
+                        
         <div class="dna">
         	<div class="ele">
         		<div class="dot"></div>
@@ -209,24 +209,29 @@
         		<div class="dot"></div>
         	</div>
         </div>
-
-            
+        <a class="btn btn-full" href="#">&emsp;&emsp;Predict!&emsp;&emsp;</a>
+      
         </div>
         
         </header>
         <section class="section-form">
             <div class="row">
+                <h2>Enter the Following Details</h2>
                 <div class="upload-content">
                     <br><br>
                     <form method="POST" class="post-form" enctype="multipart/form-data">  
                         {% csrf_token %}  
                         <div>
-                            <h4>Enter your Email : <input type="email" name="email" required></h4>
+                            <h4>Enter your Name : <input type="text" name="name" placeholder="  Your Name" required></h4>
+                            <br>
+                            <h4>Enter your Email : <input type="email" name="email" placeholder="  Your Email ID" required></h4>
                         </div>
                         <br>
+                        <hr>
+                        <br>
                         <div>
-                            <h4>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Upload the Sequence : <input type="file"  name="file" required></h4><br>
-                            <h4>Select the softwares you want to use:</h4><br><p>(GeneId by default)<br><br>
+                            <h4>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&emsp;Upload Sequence : <input type="file"  name="file" required></h4><br>
+                            <h4>Select the softwares you want to use:</h4><p>(GeneId by default)</p><br>
                         </div>
                         <div>
                             &emsp;&ensp;<input type="checkbox" name="softwares[]" value="1"> GeneId&emsp;
@@ -234,7 +239,7 @@
                             <input type="checkbox" name="softwares[]" value="3"> GenScan&emsp;<br><br>
                         </div>
                         <div>
-                            <h4>What is the species?</h4><br>
+                            <h4>What's the species ?</h4><br>
                                 <select name="species" >
                                   <option value="Homo sapiens (human)">Homo sapiens (human)</option>
                                     
@@ -268,7 +273,7 @@
                         </div>
                         
                         <br><br>
-                        <input class="btn btn-full" type="submit" value="Submit">
+                        <input class="btn btn-ghost" type="submit" value="Submit">
 
                     </form>
                 </div>
