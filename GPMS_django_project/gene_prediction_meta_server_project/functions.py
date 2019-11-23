@@ -1,10 +1,25 @@
 import glob
+import time
 import smtplib, os, sys
 from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
 from email.mime.text import MIMEText
 from email import encoders
 from html.parser import HTMLParser
+
+
+def run_geneid():
+    for i in range(10):
+        time.sleep(1)
+        print("working")
+    os.path.abspath('..')
+    os.chdir("static/upload/")
+    os.system(" python3 geneidscript.py")
+
+        
+        
+        
+        
 def send_email(user_email):
 	# lines to be changed 10, 11, 12, 15, 16
 	

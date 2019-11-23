@@ -1,9 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from .functions import *
-import os
 from pathlib import Path
-
+from threading import Thread
 
 def home(request):
 	if request.method == 'POST':
@@ -11,16 +10,16 @@ def home(request):
 		softwares_list=request.POST.getlist('softwares[]')        
 		if("1" in softwares_list or len(softwares_list)==0):
 			print("s1")
-			os.path.abspath('..')
-			os.chdir("static/upload/")
-			os.system(" python3 geneidscript.py")
+			background_thread=Thread(target=run_geneid, args=())
+			background_thread.daemon=True
+			background_thread.start()
 
 		if("2" in softwares_list):
 			print("s2")
 		if("3" in softwares_list):
 			print("s3")
 		x=request.POST["species"]
-		send_email(request.POST['email'])
-		return HttpResponse("File uploaded successfuly")  
+		#send_email(request.POST['email'])
+		return HttpResponse("You will recieve the mail soon")  
 	else:  
 		return render(request,"home.html")
