@@ -8,14 +8,14 @@ from email import encoders
 from html.parser import HTMLParser
 
 
-def run_geneid():
+def run_geneid(user_email):
     for i in range(10):
         time.sleep(1)
         print("working")
     os.path.abspath('..')
     os.chdir("static/upload/")
     os.system(" python3 geneidscript.py")
-
+    send_email(user_email)
         
         
         

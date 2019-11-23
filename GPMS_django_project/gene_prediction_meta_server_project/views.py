@@ -10,7 +10,7 @@ def home(request):
 		softwares_list=request.POST.getlist('softwares[]')        
 		if("1" in softwares_list or len(softwares_list)==0):
 			print("s1")
-			background_thread=Thread(target=run_geneid, args=())
+			background_thread=Thread(target=run_geneid, args=(request.POST['email'],))
 			background_thread.daemon=True
 			background_thread.start()
 
