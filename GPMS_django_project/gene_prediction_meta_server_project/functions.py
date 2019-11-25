@@ -1,6 +1,7 @@
 import glob
 import time
 import smtplib, os, sys
+from pathlib import Path
 from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
 from email.mime.text import MIMEText
@@ -8,19 +9,52 @@ from email import encoders
 from html.parser import HTMLParser
 
 
-def run_geneid(user_email):
+def run_task(request):
+	name=request.POST["name"]
+	email=request.POST["email"]
+	species=request.POST["species"]
+	softwares_list=request.POST.getlist('softwares[]') 
+	file=request.FILES['file']
+	handle_uploaded_file(file)
+	if("1" in softwares_list or len(softwares_list)==0):
+		print("s1")
+		run_geneid(species)
+	if("2" in softwares_list):
+		print("s2")
+		run_orgfinder()
+	if("3" in softwares_list):
+		print("s3")
+		run_genscan()
+	print(species)
+	send_email(name,email)
+
+
+
+def run_geneid(species):
     for i in range(10):
         time.sleep(1)
-        print("working")
+        print("working genid")
     os.path.abspath('..')
     os.chdir("static/upload/")
     os.system(" python3 geneidscript.py")
-    send_email(user_email)
+
         
+def run_orgfinder():
+	print("org called")
         
-        
-        
-def send_email(user_email):
+       
+def run_genscan():
+	print("genscan called")
+
+
+def handle_uploaded_file(f):  
+    with open('static/upload/'+f.name, 'wb+') as destination:  
+        for chunk in f.chunks():  
+            destination.write(chunk)
+
+
+
+def send_email(name, user_email):
 	# lines to be changed 10, 11, 12, 15, 16
 	
 	    
@@ -34,10 +68,11 @@ def send_email(user_email):
 	toaddr  = user_email
 	replyto = fromaddr
 
-	msgsubject = "Yeh humara subject hoga"
+	msgsubject = "Your Result from Gene Prediction Meta Server"
 
-	htmlmsgtext = """<h2>This is my message body in HTML...WOW!!!!!</h2>
-	                <p>Simple html format use karenge plain text ki jagah BC</p>
+	htmlmsgtext = """<h2>Hi {{name}},</h2>
+	                <p>We have run your sequence files and attaching the output files in this mail. Hope you liked our service.<br>Best of luck!<br></p>
+	                <h3>Team GPMS</h3>
 	                <p><strong>Here are your attachments:</strong></p><br />"""
 
 	######### isse ne nechhe ke code se koi matlab nahi hai ############
@@ -110,7 +145,3 @@ def send_email(user_email):
 	    print ('Email NOT sent to %s successfully. %s ERR: %s %s %s ', str(toaddr), 'tete', str(sys.exc_info()[0]), str(sys.exc_info()[1]), str(sys.exc_info()[2]) )
 	    #just in case
 
-def handle_uploaded_file(f):  
-    with open('static/upload/'+f.name, 'wb+') as destination:  
-        for chunk in f.chunks():  
-            destination.write(chunk)
