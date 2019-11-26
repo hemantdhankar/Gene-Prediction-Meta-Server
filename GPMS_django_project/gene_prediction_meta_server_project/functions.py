@@ -10,12 +10,12 @@ from html.parser import HTMLParser
 
 
 def run_task(request):
+	file=request.FILES['file']
+	handle_uploaded_file(file)
 	name=request.POST["name"]
 	email=request.POST["email"]
 	species=request.POST["species"]
 	softwares_list=request.POST.getlist('softwares[]') 
-	file=request.FILES['file']
-	handle_uploaded_file(file)
 	if("1" in softwares_list or len(softwares_list)==0):
 		print("s1")
 		run_geneid(species)
@@ -49,7 +49,7 @@ def run_genscan():
 
 def handle_uploaded_file(f):  
     with open('static/upload/'+f.name, 'wb+') as destination:  
-        for chunk in f.chunks():  
+        for chunk in f.chunks():
             destination.write(chunk)
 
 
