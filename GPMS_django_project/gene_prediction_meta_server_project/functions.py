@@ -78,12 +78,12 @@ def send_email(name, user_email, softwares_list):
 	msgsubject = "Your Result from Gene Prediction Meta Server"
 
 	htmlmsgtext = """<h2>Hi """+name+""",</h2>"""
-	htmlmsgtext	= htmlmsgtext+"""<p>We have run your sequence files on our GPMS server ont the following softwares :<br> """
+	htmlmsgtext	= htmlmsgtext+"""<p>We have run your sequence files on the following softwares on our GPMS Server :<br> """
 	counter=1
 	for i in softwares_list:
-		htmlmsgtext=htmlmsgtext+str(counter)+""") """+i+"""\n"""
-        counter+=1
-	htmlmsgtetxt=htmlmsgtext+"""Hope you liked our service.<br>Best of luck!<br></p><h3>Team GPMS</h3><p><strong>Here are your attachments:</strong></p><br />"""
+		htmlmsgtext=htmlmsgtext+str(counter)+""") """+i+"""    """
+		counter+=1
+	htmlmsgtext=htmlmsgtext+"""<br>Hope you liked our service. As we are still in devoloping phase feedbacks are highly appreciated.<br>Best of luck!<br></p><h3>Team GPMS</h3><p><strong>Here are your attachments:</strong></p><br />"""
 
 	######### isse ne nechhe ke code se koi matlab nahi hai ############
 

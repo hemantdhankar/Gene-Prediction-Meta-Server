@@ -1,0 +1,168 @@
+
+
+
+-------------------------------------------------
+start time            : Wed Nov 27 10:54:17 2019
+working directory     : /home/nitesh/Documents/Gene-Prediction-Meta-Server/GPMS_django_project/static/upload/genemark
+command line          : ../test.fa
+output file with predictions : test.fa.lst
+input sequence        : ../test.fa
+number of bins        : 0
+filter                : 1
+strand                : both
+markov chain order    : cod = 4, non = 2
+genetic code          : 1
+search for motif      : 1
+motif width           : 12
+prestart length       : 6
+fixed motif position  : 1
+off overlap           : 1
+identity threshold    : 0.99
+maximum iteration     : 10
+gene overlap off      : 1
+strand to predict on  : both
+GeneMarkS parameters  : /home/nitesh/Documents/Gene-Prediction-Meta-Server/GPMS_django_project/static/upload/genemark/par_1.default
+initial hmm model     : 
+output format         : LST
+output nucleotides    : 
+output proteins       : 
+gibbs_version         : 3
+
+         run starts here:
+prepare sequence
+/home/nitesh/Documents/Gene-Prediction-Meta-Server/GPMS_django_project/static/upload/genemark/probuild --par /home/nitesh/Documents/Gene-Prediction-Meta-Server/GPMS_django_project/static/upload/genemark/par_1.default --clean_join sequence --seq ../test.fa --log gms.log
+Clean-Join      IN   OUT
+Contigs - 1 1
+All letters - 198285   198285
+Unambiguous letters - 198285 198285
+A - 55426 55426
+C - 41198 41198
+G - 41497 41497
+T - 60164 60164
+N - 0 0
+Parameters:
+  Minimum of unambiguous letters per record: 1000
+  Trim down substrings "N...N" to maximum length: 50
+  Connect records using gap filler: NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+  Minimum of unambiguous letters in output: 50000
+system call done
+do_iterations = 1
+/home/nitesh/Documents/Gene-Prediction-Meta-Server/GPMS_django_project/static/upload/genemark/probuild --par /home/nitesh/Documents/Gene-Prediction-Meta-Server/GPMS_django_project/static/upload/genemark/par_1.default --stat_fasta --seq ../test.fa > initial.meta.lst.feature 
+system call done
+min_GC=42  max_GC=42 total_seq_length=198285
+(42)->(198285)
+(42)->(198285)
+(42)->(198285)
+bin number = 1
+GC range = 42,42
+prepare sequence
+/home/nitesh/Documents/Gene-Prediction-Meta-Server/GPMS_django_project/static/upload/genemark/probuild --par /home/nitesh/Documents/Gene-Prediction-Meta-Server/GPMS_django_project/static/upload/genemark/par_1.default --clean_join sequence --seq ../test.fa --log gms.log
+Clean-Join      IN   OUT
+Contigs - 1 1
+All letters - 198285   198285
+Unambiguous letters - 198285 198285
+A - 55426 55426
+C - 41198 41198
+G - 41497 41497
+T - 60164 60164
+N - 0 0
+Parameters:
+  Minimum of unambiguous letters per record: 1000
+  Trim down substrings "N...N" to maximum length: 50
+  Connect records using gap filler: NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN
+  Minimum of unambiguous letters in output: 50000
+system call done
+do_iterations = 1
+run initial prediction
+/home/nitesh/Documents/Gene-Prediction-Meta-Server/GPMS_django_project/static/upload/genemark/gmhmmp -p 0  sequence  -m /home/nitesh/Documents/Gene-Prediction-Meta-Server/GPMS_django_project/static/upload/genemark/MetaGeneMark_v1.mod  -o itr_0.lst
+system call done
+entering iteration loop
+build model: itr_1.mod for iteration: 1
+/home/nitesh/Documents/Gene-Prediction-Meta-Server/GPMS_django_project/static/upload/genemark/probuild --par /home/nitesh/Documents/Gene-Prediction-Meta-Server/GPMS_django_project/static/upload/genemark/par_1.default --mkmod itr_1.mod --seq sequence --geneset itr_0.lst --ORDM 4 --order_non 2 --revcomp_non 1 --fixmotif --PRE_START_WIDTH 6 --width 12 --log gms.log
+Pos   A   C   G   T
+1 0.357 0.143 0.071 0.429
+2 0.214 0.286 0.357 0.143
+3 0.071 0.357 0.286 0.286
+4 0.143 0.214 0.429 0.214
+5 0.286 0.429 0.143 0.143
+6 0.071 0.429 0.286 0.214
+
+7 0.571 0.071 0.214 0.143
+8 0.071 0.071 0.071 0.786
+9 0.071 0.071 0.786 0.071
+
+10 0.429 0.071 0.286 0.214
+11 0.214 0.214 0.286 0.286
+12 0.071 0.429 0.143 0.357
+
+system call done
+prediction, iteration: 1
+/home/nitesh/Documents/Gene-Prediction-Meta-Server/GPMS_django_project/static/upload/genemark/gmhmmp -p 0  sequence  -m itr_1.mod  -o itr_1.lst -r
+system call done
+compare:
+/home/nitesh/Documents/Gene-Prediction-Meta-Server/GPMS_django_project/static/upload/genemark/probuild --par /home/nitesh/Documents/Gene-Prediction-Meta-Server/GPMS_django_project/static/upload/genemark/par_1.default --compare --source itr_1.lst --target itr_0.lst
+compare itr_0.lst and itr_1.lst: 0.1399
+build model: itr_2.mod for iteration: 2
+/home/nitesh/Documents/Gene-Prediction-Meta-Server/GPMS_django_project/static/upload/genemark/probuild --par /home/nitesh/Documents/Gene-Prediction-Meta-Server/GPMS_django_project/static/upload/genemark/par_1.default --mkmod itr_2.mod --seq sequence --geneset itr_1.lst --ORDM 4 --order_non 2 --revcomp_non 1 --fixmotif --PRE_START_WIDTH 6 --width 12 --log gms.log
+Pos   A   C   G   T
+1 0.500 0.143 0.071 0.286
+2 0.357 0.357 0.143 0.143
+3 0.143 0.429 0.214 0.214
+4 0.143 0.214 0.357 0.286
+5 0.357 0.286 0.286 0.071
+6 0.143 0.571 0.143 0.143
+
+7 0.786 0.071 0.071 0.071
+8 0.071 0.071 0.071 0.786
+9 0.071 0.071 0.786 0.071
+
+10 0.429 0.071 0.214 0.286
+11 0.143 0.286 0.357 0.214
+12 0.071 0.357 0.143 0.429
+
+system call done
+prediction, iteration: 2
+/home/nitesh/Documents/Gene-Prediction-Meta-Server/GPMS_django_project/static/upload/genemark/gmhmmp -p 0  sequence  -m itr_2.mod  -o itr_2.lst -r
+system call done
+compare:
+/home/nitesh/Documents/Gene-Prediction-Meta-Server/GPMS_django_project/static/upload/genemark/probuild --par /home/nitesh/Documents/Gene-Prediction-Meta-Server/GPMS_django_project/static/upload/genemark/par_1.default --compare --source itr_2.lst --target itr_1.lst
+compare itr_1.lst and itr_2.lst: 0.9818
+build model: itr_3.mod for iteration: 3
+/home/nitesh/Documents/Gene-Prediction-Meta-Server/GPMS_django_project/static/upload/genemark/probuild --par /home/nitesh/Documents/Gene-Prediction-Meta-Server/GPMS_django_project/static/upload/genemark/par_1.default --mkmod itr_3.mod --seq sequence --geneset itr_2.lst --ORDM 4 --order_non 2 --revcomp_non 1 --fixmotif --PRE_START_WIDTH 6 --width 12 --log gms.log
+Pos   A   C   G   T
+1 0.500 0.143 0.071 0.286
+2 0.357 0.357 0.143 0.143
+3 0.143 0.429 0.214 0.214
+4 0.143 0.214 0.357 0.286
+5 0.357 0.286 0.286 0.071
+6 0.143 0.571 0.143 0.143
+
+7 0.786 0.071 0.071 0.071
+8 0.071 0.071 0.071 0.786
+9 0.071 0.071 0.786 0.071
+
+10 0.429 0.071 0.214 0.286
+11 0.143 0.286 0.357 0.214
+12 0.071 0.357 0.143 0.429
+
+system call done
+prediction, iteration: 3
+/home/nitesh/Documents/Gene-Prediction-Meta-Server/GPMS_django_project/static/upload/genemark/gmhmmp -p 0  sequence  -m itr_3.mod  -o itr_3.lst -r
+system call done
+compare:
+/home/nitesh/Documents/Gene-Prediction-Meta-Server/GPMS_django_project/static/upload/genemark/probuild --par /home/nitesh/Documents/Gene-Prediction-Meta-Server/GPMS_django_project/static/upload/genemark/par_1.default --compare --source itr_3.lst --target itr_2.lst
+compare itr_2.lst and itr_3.lst: 1.0000
+Stopped iterations on identity: 1.0000
+create: ../test.fa.mod
+cp itr_3.mod ../test.fa.mod
+system call done
+output: GeneMark_hmm.mod
+cp ../test.fa.mod GeneMark_hmm.mod
+system call done
+predict genes using native model with motif
+/home/nitesh/Documents/Gene-Prediction-Meta-Server/GPMS_django_project/static/upload/genemark/gmhmmp -p 0 -b  -r -m GeneMark_hmm.mod -o test.fa.lst  ../test.fa
+system call done
+rm -f sequence initial.meta.lst initial.meta.lst.fna initial.meta.lst.feature sequence itr_0.lst itr_1.mod itr_1.lst itr_2.mod itr_2.lst itr_3.mod itr_3.lst ../test.fa.mod with_seq.out
+system call done
+End: Wed Nov 27 10:54:18 2019
+
