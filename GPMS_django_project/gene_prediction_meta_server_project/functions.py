@@ -15,43 +15,33 @@ def run_task(request):
 	name=request.POST["name"]
 	email=request.POST["email"]
 	species=request.POST["species"]
-	softwares_list=request.POST.getlist('softwares[]') 
+	softwares_list=request.POST.getlist('softwares[]')
+	print(os.getcwd())
 	if("GeneId" in softwares_list or len(softwares_list)==0):
 		run_geneid(species)
+		
 	if("OrfFinder" in softwares_list):
 		run_orgfinder()
 	if("Genemark" in softwares_list):
-		run_genscan()
+		run_genscan()	
 	print(species)
 	send_email(name,email,softwares_list)
-	print(os.getcwd())
-	files = glob.glob('../output/*')
-	for f in files:
-		os.remove(f)
-
 
 
 
 def run_geneid(species):
 	print("geneid running")
-	os.path.abspath('..')
-	os.chdir("static/upload/")
-	os.system(" python3 geneidscript.py")
+	os.system("python3 static/upload/geneidscript.py")
+	print(os.getcwd())
 
         
 def run_orgfinder():
 	print("orfinder running")
-	#print(os.getcwd())
-	os.system("python3 orfinder.py")
-
-        
+	os.system("python3 static/upload/orfinder.py")
        
 def run_genscan():
 	print("genscan called")
-	#print(os.getcwd())
-	#os.chdir("static/upload/")
-	#print(os.getcwd())
-	os.system("python3 genemark.py")
+	os.system("python3 static/upload/genemark.py")
 
 
 def handle_uploaded_file(f):  
@@ -65,7 +55,7 @@ def send_email(name, user_email, softwares_list):
 	# lines to be changed 10, 11, 12, 15, 16
 	
 	    
-	attachments = glob.glob("../output/*")
+	attachments = glob.glob("static/output/*")
 	print(attachments)
 	username = 'genepredictionmetaserver'
 	password = 'Gene@server'

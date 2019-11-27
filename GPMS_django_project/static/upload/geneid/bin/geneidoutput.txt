@@ -1,4 +1,4 @@
-## date Wed Nov 27 10:54:16 2019
+## date Wed Nov 27 16:50:21 2019
 ## source-version: geneid_v1.4 -- geneid@crg.es
 # Sequence test - Length = 198285 bps
 # Optimal Gene Structure. 8 genes. Score = 133.58 
