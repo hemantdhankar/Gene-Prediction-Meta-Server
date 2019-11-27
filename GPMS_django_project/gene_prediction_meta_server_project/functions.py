@@ -7,8 +7,8 @@ from email.mime.base import MIMEBase
 from email.mime.text import MIMEText
 from email import encoders
 from html.parser import HTMLParser
-
-
+import os
+import glob
 def run_task(request):
 	file=request.FILES['file']
 	handle_uploaded_file(file)
@@ -27,24 +27,34 @@ def run_task(request):
 		run_genscan()
 	print(species)
 	send_email(name,email)
+	print(os.getcwd())
+	files = glob.glob('../output/*')
+	for f in files:
+		os.remove(f)
+
 
 
 
 def run_geneid(species):
-    for i in range(10):
-        time.sleep(1)
-        print("working genid")
-    os.path.abspath('..')
-    os.chdir("static/upload/")
-    os.system(" python3 geneidscript.py")
+	print("geneid running")
+	os.path.abspath('..')
+	os.chdir("static/upload/")
+	os.system(" python3 geneidscript.py")
 
         
 def run_orgfinder():
-	print("org called")
+	print("orfinder running")
+	#print(os.getcwd())
+	os.system("python3 orfinder.py")
+
         
        
 def run_genscan():
 	print("genscan called")
+	#print(os.getcwd())
+	#os.chdir("static/upload/")
+	#print(os.getcwd())
+	os.system("python3 genemark.py")
 
 
 def handle_uploaded_file(f):  
@@ -70,8 +80,8 @@ def send_email(name, user_email):
 
 	msgsubject = "Your Result from Gene Prediction Meta Server"
 
-	htmlmsgtext = """<h2>Hi {{name}},</h2>
-	                <p>We have run your sequence files and attaching the output files in this mail. Hope you liked our service.<br>Best of luck!<br></p>
+	htmlmsgtext = """<h2>Hi """+name+"""</h1>"""
+	htmlmsgtext	= htmlmsgtext+"""<p>We have run your sequence files and attaching the output files in this mail. Hope you liked our service.<br>Best of luck!<br></p>
 	                <h3>Team GPMS</h3>
 	                <p><strong>Here are your attachments:</strong></p><br />"""
 
