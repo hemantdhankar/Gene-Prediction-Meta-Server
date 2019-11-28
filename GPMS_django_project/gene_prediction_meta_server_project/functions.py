@@ -26,6 +26,9 @@ def run_task(request):
 		run_genscan()	
 	print(species)
 	send_email(name,email,softwares_list)
+	files = glob.glob('static/output/*')
+	for f in files:
+	    os.remove(f)
 
 
 

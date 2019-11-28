@@ -2,7 +2,7 @@
 
 
 -------------------------------------------------
-start time            : Wed Nov 27 17:44:34 2019
+start time            : Thu Nov 28 17:28:17 2019
 working directory     : /home/nitesh/Documents/Gene-Prediction-Meta-Server/GPMS_django_project
 command line          : static/upload/test.fa -output static/output/genemarkoutput.lst
 output file with predictions : static/output/genemarkoutput.lst
@@ -164,5 +164,5 @@ predict genes using native model with motif
 system call done
 rm -f sequence initial.meta.lst initial.meta.lst.fna initial.meta.lst.feature sequence itr_0.lst itr_1.mod itr_1.lst itr_2.mod itr_2.lst itr_3.mod itr_3.lst static/upload/test.fa.mod with_seq.out
 system call done
-End: Wed Nov 27 17:44:42 2019
+End: Thu Nov 28 17:28:27 2019
 
