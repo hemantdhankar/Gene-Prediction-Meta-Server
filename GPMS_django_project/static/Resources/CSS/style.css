@@ -75,9 +75,21 @@ h3{
 }
 
 /****************************** HEADER ****************************************/
+header h3{
+    position: relative;
+    top: 30%;
+    
+}
 
-header{
+.home-header{
     background-image: linear-gradient(to right,rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.3)), url(Img/coverimage4.jpg);    
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+}
+.submitted-header{
+    background-image: linear-gradient(to right,rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.3)), url(Img/coverimage6.jpeg);    
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -91,6 +103,14 @@ header{
     position: relative;
     top: 25%;
 }
+
+img{
+    height: 150px;
+}
+.sub{
+    top: 20%;
+}
+
 .main-header .row{
     align-content: center;
 }
@@ -167,18 +187,24 @@ option{
     left: 35px;
     float: left;  
     font-size: 160%;
-    border-radius: -15px;
     padding: 2px 10px;  
+    border-radius: 15px;
     border: 6px solid rgba(255,255,255,0.68);
 
 }
 
-.whitelogo{
+.purple-logo{
     display: none;
-    float: left;
-    height: 50px;
-    margin-top: 5px;
-    margin-left: -50px;
+    position: absolute;
+    margin-top: 6px;
+    color: rgba(155, 89, 182, 1);
+    left: 35px;
+    float: left;  
+    font-size: 160%;
+    padding: 2px 10px;  
+    border-radius: 15px;
+    border: 5px solid rgba(155, 89, 182, 1);
+
 }
 
 /*------------MAIN NAV BAR----------------*/
@@ -191,7 +217,7 @@ nav .row{
 .main-nav{
     float:right;
     list-style: none;  
-    padding-top: 30px;
+    padding-top: 10px;
     font-size: 110%;
 }
 
@@ -218,38 +244,39 @@ nav .row{
 /*------------STICKY NAV BAR----------------*/
 
 .sticky{
-    background-color: rgba(33, 178, 166, 0.9);
+    background-color: rgba(255,255,255,0.9);
     position: fixed;
     margin: 0;
     top: 0;
     left: 0;
     width: 100%;
-    box-shadow: 2px 2px 2px #e0dbdb;
     font-weight: 400;
+    font-size: 90%;
     z-index: 9999;
 }
 
 .sticky .main-nav{
     padding-top: 0;
+    margin-top: 15px;
     
 }
 .sticky .main-nav li a:link,
 .sticky .main-nav li a:visited{
-    padding: 16px 0;
-    color: #fff;
+    padding: 10px 0;
+    color: #000;
 }
  
 .sticky .main-nav li a:hover,
 .sticky .main-nav li a:active{
-    border-bottom: 2px solid #fff;
+    border-bottom: 4px solid rgba(195, 86, 191,1);
 }
 
 .main-nav{
-    margin-top: 18px;    
+    margin-top: 10px;    
 }
 
 .sticky .logo{ display: none;}
-.sticky .whitelogo{ display: block;}
+.sticky .purple-logo{ display: block;}
 
 /*------------------------------------------------SECTION-FORM----------------------------------------------------*/
 .section-form{
@@ -276,15 +303,19 @@ nav .row{
     font-size: 8px;
 }
 .upload-content {
+    margin-top: 12px;
     position: relative;
     padding-top: 20px;
     padding-bottom: 20px;
     height: 100%;
     width: 70%;
     margin-left:15%; 
-    border-radius: 40px;
+    border-radius: 30px 30px 0 0;
     background-color: rgba(255, 255, 255, 0.85);
 
+}
+.inv{
+    border-radius: 0 0 30px 30px;
 }
 
 /*------------------------------------------------BUTTONS---------------------------------------------------*/
@@ -462,7 +493,7 @@ footer p{
 footer{
     background-color: #9b59b6;
     color: white;
-    padding: 40px;
+    padding: 20px;
     font-size: 85%;
     
 }
@@ -492,14 +523,33 @@ footer{
 }
 
 
-/********************************EXTRA/IRREVELANT*********************************/
+/*********************************** ANIMATIONS *************************************/
+
+.js--wp-1{
+    opacity: 0;
+}
+
+.js--wp-1.animated{
+    opacity: 1;
+}
+.js--wp-2{
+    opacity: 0;
+}
+
+.js--wp-2.animated{
+    opacity: 1;
+}
+
+
+
+/******************************** EXTRA/IRREVELANT *********************************/
 
 .extra{
     background-color: cadetblue;
 }
 .dna {
 	width: 360px;
-	margin-top: 100px;
+	margin-top: 60px;
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
