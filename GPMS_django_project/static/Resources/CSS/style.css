@@ -110,6 +110,14 @@ img{
 .sub{
     top: 20%;
 }
+.submitted-text{
+    background-color: rgba(0,0,0,0.3);
+    border: 5px dotted white;
+    word-spacing: 3px;
+    border-radius: 15px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
 
 .main-header .row{
     align-content: center;
